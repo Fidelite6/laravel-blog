@@ -16,6 +16,7 @@ class CreateBinshopsPostsTable extends Migration
         Schema::create('binshops_posts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger("user_id")->index()->nullable();
+            $table->text('test_field')->nullable();
 
             $table->dateTime("posted_at")->index()->nullable()->comment("Public posted at time, if this is in future then it wont appear yet");
             $table->boolean("is_published")->default(true);
